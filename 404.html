@@ -2,6 +2,18 @@
 <html lang="da">
 <head>
 <meta charset="utf-8">
+<script>(function () {
+  var seg = location.pathname.match(/^\/[^/]+\//);
+  var sub = /\.github\.io$|^localhost$|^127\.0\.0\.1$/.test(location.hostname);
+  var base = document.createElement('base');
+  base.href = sub && seg ? seg[0] : '/';
+  document.head.appendChild(base);
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+      a.href = location.pathname + location.search + a.getAttribute('href');
+    });
+  });
+})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Siden blev ikke fundet | Nuuk Transport</title>
 <meta name="description" content="404">
