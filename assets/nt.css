@@ -140,3 +140,17 @@ section{padding:clamp(48px,7vw,84px) 0}
   .rigs{padding-left:16px;padding-right:16px;scroll-padding-left:16px;gap:12px}
   .rig{flex-basis:78vw;max-width:300px}
 }
+
+/* undersider: samme top som forsiden. .nt-page-head er toppen på sider uden foto */
+.nt-page-head{padding:clamp(28px,4vw,44px) 0;background:#fff;border-bottom:1px solid var(--line)}
+.nt-page-head h1,.nt-hero-sub h1{font-size:clamp(1.85rem,3vw,2.6rem);line-height:1.1;margin-bottom:12px;max-width:20em}
+.nt-page-head h1 em,.nt-hero-sub h1 em{font-style:normal;color:inherit}
+.nt-page-head p{font-size:1.08rem;max-width:40em;margin-bottom:20px}
+.nt-page-head p:last-child,.nt-hero-sub p:last-child{margin-bottom:0}
+.nt-hero .crumbs,.nt-page-head .crumbs{color:var(--muted);margin-bottom:14px}
+.nt-hero .crumbs a,.nt-page-head .crumbs a{color:var(--ink-2);text-decoration:underline;text-underline-offset:2px}
+.nt-hero-sub .nt-hero-pic{min-height:320px}
+.nt-hero-sub .eyebrow,.nt-page-head .eyebrow{margin-bottom:8px}
+@media (max-width:900px){
+  .nt-hero-sub .nt-hero-pic{min-height:0;height:clamp(160px,38vw,260px)}
+}
