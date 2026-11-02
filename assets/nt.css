@@ -64,3 +64,79 @@ table.spec thead th:first-child{background:var(--bg-2)}
 .cal-links{margin:0;padding:14px 20px;border-top:1px solid var(--line);background:var(--bg-2);font-size:.9rem}
 .cal-links a{color:var(--red-dark);font-weight:600}
 @media (max-width:620px){.cal-fallback{flex-direction:column;padding:22px}.cal-frame{height:900px}}
+
+/* ---------- forside og fælles ro: mindre billede, kortere vej til indholdet, samme overblik på alle skærme ---------- */
+section{padding:clamp(48px,7vw,84px) 0}
+.eyebrow{font-size:.95rem;letter-spacing:0;text-transform:none}
+
+.nt-hero{display:grid;grid-template-columns:max(24px,calc((100% - var(--max))/2 + 24px)) minmax(0,1fr) minmax(0,1.1fr);padding:0;background:#fff}
+.nt-hero-txt{grid-column:2;align-self:center;padding:clamp(32px,3.6vw,48px) clamp(28px,4vw,56px) clamp(32px,3.6vw,48px) 0}
+.nt-hero h1{font-size:clamp(1.95rem,3.3vw,2.85rem);line-height:1.08;margin-bottom:16px;max-width:17em}
+.nt-hero h1 em{font-style:normal;color:inherit}
+.nt-hero p{font-size:1.08rem;max-width:34em;margin-bottom:24px}
+.nt-hero-pic{position:relative;min-height:380px}
+.nt-hero-pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 42%}
+
+.nt-stats{padding:0;background:var(--ink)}
+.nt-stats .stats{margin:0;border:0;gap:0}
+.nt-stats .stats div{padding:20px 20px 20px 0}
+.nt-stats .stats b{font-size:1.65rem;margin-bottom:4px}
+.nt-stats .stats span{display:block;line-height:1.35}
+
+.nt-services{grid-template-columns:repeat(6,1fr)}
+.nt-services .card{grid-column:span 2}
+.nt-services .card:nth-child(-n+2){grid-column:span 3}
+.nt-services .card:nth-child(-n+2) .ph{aspect-ratio:21/9}
+.nt-services .card .bd{padding:18px 20px 20px}
+.nt-services .card h3{margin-bottom:4px}
+.nt-services .card p{margin-bottom:12px}
+
+.nt-fleet{padding-bottom:clamp(40px,5vw,64px)}
+.nt-fleet .head{align-items:center;margin-bottom:24px}
+.nt-fleet .head .btn{justify-self:end;width:fit-content}
+.nt-fleet h2{margin:0}
+.nt-fleet h2 em{font-style:normal;color:inherit}
+.rigs{list-style:none;margin:0;padding:4px max(24px,calc((100% - var(--max))/2 + 24px)) 16px;display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x proximity;scroll-padding-left:max(24px,calc((100% - var(--max))/2 + 24px));scrollbar-width:thin}
+.rig{flex:0 0 300px;scroll-snap-align:start;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.rig img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.rig-bd{padding:14px 16px 16px}
+.rig-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:4px}
+.rig h3{margin:0;font-size:1.25rem}
+.rig p{margin:0;font-size:.92rem;color:var(--muted)}
+.plate{flex:none;font:700 .78rem/1 Archivo,sans-serif;letter-spacing:.04em;color:var(--ink);background:#fff;border:1.5px solid var(--ink);border-radius:4px;padding:5px 7px;white-space:nowrap}
+
+.nt-havn .feature-pic{aspect-ratio:5/4}
+
+@media (max-width:1020px){
+  .nt-services{grid-template-columns:1fr 1fr}
+  .nt-services .card,.nt-services .card:nth-child(-n+2){grid-column:auto}
+  .nt-services .card:first-child{grid-column:1/-1}
+  .nt-services .card:nth-child(n+2) .ph{aspect-ratio:16/10}
+}
+@media (max-width:900px){
+  .nt-hero{grid-template-columns:minmax(0,1fr)}
+  .nt-hero-txt{grid-column:1;padding:28px 24px 24px}
+  .nt-fleet .head .btn{justify-self:start}
+  .nt-hero-pic{order:-1;min-height:0;height:clamp(180px,46vw,300px)}
+  .nt-stats .stats{grid-template-columns:repeat(4,1fr)}
+  .nt-havn .feature-pic{aspect-ratio:16/9}
+}
+@media (max-width:620px){
+  .nt-hero-txt{padding:24px 16px 20px}
+  .nt-hero p{font-size:1rem;margin-bottom:18px}
+  .nt-hero .btns .btn{flex:1 1 auto}
+  .nt-stats .stats{grid-template-columns:1fr 1fr}
+  .nt-stats .stats div{padding:14px 12px 14px 0}
+  .nt-stats .stats b{font-size:1.35rem}
+  .nt-services{grid-template-columns:1fr;gap:10px}
+  .nt-services .card,.nt-services .card:first-child,.nt-services .card:nth-child(-n+2){grid-column:auto;flex-direction:row;align-items:stretch}
+  .nt-services .card .ph,.nt-services .card:nth-child(-n+2) .ph,.nt-services .card:nth-child(n+2) .ph{flex:0 0 104px;aspect-ratio:auto}
+  .nt-services .card .ph{position:relative}
+  .nt-services .card .ph img{position:absolute;inset:0}
+  .nt-services .card .bd{padding:12px 14px}
+  .nt-services .card h3{font-size:1.05rem}
+  .nt-services .card p{font-size:.9rem;line-height:1.4;margin:0}
+  .nt-services .card .more{font-size:0;height:0;margin:0}
+  .rigs{padding-left:16px;padding-right:16px;scroll-padding-left:16px;gap:12px}
+  .rig{flex-basis:78vw;max-width:300px}
+}
