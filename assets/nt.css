@@ -1,0 +1,66 @@
+/* Nuuk Transport (site-nt) – tillæg til det fælles style.css: kranoversigt, vognpark og lossekalender */
+
+/* menu: tjenester med undersider, der kan foldes ud */
+.dd-menu{width:460px;grid-template-columns:1fr;max-height:calc(100vh - var(--header) - 60px);overflow:auto}
+.dd-item{display:grid;grid-template-columns:1fr auto;align-items:center;border-radius:10px}
+.dd-item.open{background:var(--bg-2)}
+.dd-item .dd-link{min-width:0}
+.dd-sub-toggle{width:40px;height:40px;margin-right:6px;display:grid;place-items:center;border:0;border-radius:8px;background:none;color:var(--ink-2);cursor:pointer}
+.dd-sub-toggle:hover{background:#fff}
+.dd-sub-toggle svg{width:16px;height:16px;transition:transform .2s}
+.dd-sub-toggle[aria-expanded="true"] svg{transform:rotate(180deg)}
+.dd-sub{grid-column:1/-1;list-style:none;margin:0;padding:0 12px 10px 62px}
+.dd-sub[hidden]{display:none}
+.dd-sub a{display:block;padding:7px 10px;border-radius:8px;font-size:.9rem;color:var(--ink-2);text-decoration:none}
+.dd-sub a:hover{background:#fff;color:var(--red-dark)}
+.dd-item.open .dd-link:hover,.dd-item.open .dd-link[aria-current="page"]{background:transparent}
+@media (max-width:900px){
+  .dd-menu{width:auto;max-height:none;overflow:visible}
+  .dd-sub{padding-left:58px}
+  .dd-sub a{padding:10px;font-size:.98rem}
+  .dd-sub-toggle{width:46px;height:46px}
+}
+@media (prefers-reduced-motion:reduce){.dd-sub-toggle svg{transition:none}}
+
+/* kranoversigt */
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);background:#fff}
+.table-wrap:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+table.spec{width:100%;border-collapse:collapse;font-size:.94rem;min-width:760px}
+table.spec th,table.spec td{padding:13px 16px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+table.spec thead th{font:700 .74rem/1.2 Inter,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:var(--bg-2);white-space:nowrap}
+table.spec tbody th{color:var(--ink);font-weight:700;white-space:nowrap}
+table.spec tbody tr:last-child th,table.spec tbody tr:last-child td{border-bottom:0}
+table.spec td:nth-child(4){font-weight:700;color:var(--ink);white-space:nowrap}
+table.spec a{color:var(--red-dark);font-weight:600}
+table.spec td{white-space:nowrap}
+/* køretøjskolonnen bliver stående, når tabellen rulles vandret på mobil */
+table.spec tbody th,table.spec thead th:first-child{position:sticky;left:0;z-index:1}
+table.spec tbody th{background:#fff;box-shadow:1px 0 0 var(--line)}
+table.spec thead th:first-child{background:var(--bg-2)}
+.note-small{font-size:.86rem;color:var(--muted);margin:12px 0 0;max-width:760px}
+
+/* vognpark */
+.fleet-count{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.fleet-count li{border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;background:#fff}
+.fleet-count b{display:block;font:800 2.2rem/1 Archivo,sans-serif;color:var(--ink)}
+.fleet-count span{font-size:.92rem;color:var(--muted)}
+.filters .n{display:inline-block;min-width:1.6em;padding:0 6px;margin-left:4px;border-radius:999px;background:var(--bg-2);color:var(--muted);font-size:.78rem;text-align:center}
+.filters button[aria-pressed="true"] .n{background:rgba(255,255,255,.18);color:#fff}
+.vehicle .bd span{display:block}
+.vehicle .bd .type{color:var(--ink-2);font-weight:500;margin-top:2px}
+.vehicle .bd .charts{margin-top:8px}
+@media (max-width:900px){.fleet-count{grid-template-columns:1fr 1fr}}
+@media (max-width:620px){.fleet{grid-template-columns:1fr}}
+
+/* lossekalender */
+.calbox{border:1px solid var(--line);border-radius:var(--radius);background:#fff;overflow:hidden}
+.cal-frame{display:block;width:100%;height:1080px;border:0}
+.cal-frame[hidden]{display:none}
+.cal-fallback{display:flex;gap:18px;align-items:flex-start;padding:30px}
+.cal-fallback[hidden]{display:none}
+.cal-fallback .ico{flex:none}
+.cal-fallback b{display:block;color:var(--ink);font-size:1.08rem}
+.cal-fallback p{margin:6px 0 16px;color:var(--muted);max-width:620px}
+.cal-links{margin:0;padding:14px 20px;border-top:1px solid var(--line);background:var(--bg-2);font-size:.9rem}
+.cal-links a{color:var(--red-dark);font-weight:600}
+@media (max-width:620px){.cal-fallback{flex-direction:column;padding:22px}.cal-frame{height:900px}}

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="kl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nuuk Transport – Kalaallisut · Dansk · English</title>
+<meta name="description" content="Nuuk Transport A/S: assartuineq, kivitsineq, usingiaaneq · transport, kran, losning og renovation i Nuuk · transport, cranes, stevedoring and waste in Nuuk.">
+<link rel="canonical" href="https://transport.gl/">
+<link rel="alternate" hreflang="kl" href="https://transport.gl/kl/">
+<link rel="alternate" hreflang="da" href="https://transport.gl/da/">
+<link rel="alternate" hreflang="en" href="https://transport.gl/en/">
+<link rel="alternate" hreflang="x-default" href="https://transport.gl/">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+  // Send besøgende til deres browsersprog (da/en, ellers kalaallisut)
+  (function () {
+    var l = (navigator.languages || [navigator.language || '']).join(',').toLowerCase();
+    var t = /(^|,)kl/.test(l) ? 'kl' : /(^|,)(da|nb|nn|no|sv)/.test(l) ? 'da' : /(^|,)en/.test(l) ? 'en' : 'kl';
+    if (!/[?&]stay/.test(location.search)) location.replace(t + '/index.html');
+  })();
+</script>
+</head>
+<body>
+<main id="indhold" class="page-hero" style="min-height:100vh;display:flex;align-items:center">
+  <div class="wrap" style="text-align:center">
+    <img src="assets/img/mark.png" alt="" width="142" height="70" style="margin:0 auto 18px">
+    <h1>NUUK TRANSPORT</h1>
+    <p style="margin:0 auto 28px">Oqaatsit toqqakkit · Vælg sprog · Choose language</p>
+    <div class="btns" style="justify-content:center">
+      <a class="btn btn-red" href="kl/index.html" lang="kl" hreflang="kl">Kalaallisut</a>
+      <a class="btn btn-ghost" href="da/index.html" lang="da" hreflang="da">Dansk</a>
+      <a class="btn btn-ghost" href="en/index.html" lang="en" hreflang="en">English</a>
+    </div>
+  </div>
+</main>
+</body>
+</html>
